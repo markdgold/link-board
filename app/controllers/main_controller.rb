@@ -1,10 +1,11 @@
 class MainController < ApplicationController
 	# before_action :current_user
   def index
-    @posts = @current_user.posts
+    @posts = Post.all
   end
 
   def create
+    @posts = @current_user.posts
 		@current_user.posts.create(post_params)
   	redirect_to root_path
   end
