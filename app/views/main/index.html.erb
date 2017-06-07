@@ -1,0 +1,13 @@
+<%if @current_user%>
+	Hello <%=@current_user.email.inspect%>
+<%else%>
+	Hello, Please Login or Signup
+<%end%>
+
+<% for post in @posts %>
+	<div class="well">
+		<h2><a href="<%=post.link%>"><%=post.title%></a></h2>
+		<p>Posted by: <%=post.user.email%></p>
+	</div>
+
+<%end%>

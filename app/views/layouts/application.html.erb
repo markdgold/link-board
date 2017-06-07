@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Link Board</title>
+    <%= csrf_meta_tags %>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<nav class="">
+  	    <ul>
+  	    	<li><a href="/submit">Submit Link</a></li>
+  	    	<% if @current_user%>
+	  	     	<li><a href="/auth/logout">Logout</a></li>
+	  	    <%else%>
+	  	      <li><a href="/login">Login</a></li>
+  	     		<li><a href="/signup">Signup</a></li>
+  	     	<%end%>
+  	    </ul>
+  	</nav>
+  	<br>
+    <%= yield %>
+  </body>
+</html>
